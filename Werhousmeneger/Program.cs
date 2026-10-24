@@ -98,7 +98,7 @@ namespace Werhousmeneger
     {
         static void Load(string filname)
         {
-
+            Console.Write(filname);
         }
         static void Main(string[] args)
         {
