@@ -1,0 +1,36 @@
+{
+  "Items": [
+    "1",
+    "2.5",
+    "1500",
+    "Budapest"
+  ],
+  "Books": [
+    "2",
+    "0.75",
+    "4500",
+    "Debrecen",
+    "J.R.R. Tolkien",
+    "The Hobbit",
+    "310",
+    "1937"
+  ],
+  "Electronics": [
+    "3",
+    "1.2",
+    "120000",
+    "Szeged",
+    "ASUS ROG Laptop",
+    "ASUS",
+    "Computer"
+  ],
+  "Furniture": [
+    "4",
+    "18.5",
+    "35000",
+    "Pecs",
+    "Table",
+    "75",
+    "120"
+  ]
+}
