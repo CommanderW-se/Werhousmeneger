@@ -28,11 +28,11 @@ namespace Werhousmeneger
             Destination = destination;
         }
 
-        public virtual Dictionary<string, List<string>> Save()
+        public virtual Dictionary<int, Dictionary<string, List<string>>> Save(int uniceID)
         {
             List<string> stringedData = new List<string>() { Convert.ToString(Id), Convert.ToString(Weight), Convert.ToString(Price), Destination };
-            Dictionary<string, List<string>> saveble = new Dictionary<string, List<string>>();
-            saveble.Add("Items", stringedData);
+            Dictionary<int,Dictionary<string, List<string>>>  saveble = new Dictionary<int, Dictionary<string, List<string>>>();
+            saveble[uniceID].Add("Items", stringedData);
             return saveble;
         }
 
@@ -51,11 +51,11 @@ namespace Werhousmeneger
             PageCount = pageCount;
             ReleaseDate = releaseDate;
         }
-        public override Dictionary<string, List<string>> Save()
+        public override Dictionary<int, Dictionary<string, List<string>>> Save(int uniceID)
         {
             List<string> stringedData = new List<string>() { Convert.ToString(Id), Convert.ToString(Weight), Convert.ToString(Price), Destination, Writer, Title,Convert.ToString(PageCount), Convert.ToString(ReleaseDate)};
-            Dictionary<string, List<string>> saveble = new Dictionary<string, List<string>>();
-            saveble.Add("Books", stringedData);
+            Dictionary<int, Dictionary<string, List<string>>> saveble = new Dictionary<int, Dictionary<string, List<string>>>();
+            saveble[uniceID].Add("Books", stringedData);
             return saveble;
         }
     }
@@ -70,11 +70,11 @@ namespace Werhousmeneger
             Publisher = publisher;
             Type = type;
         }
-        public override Dictionary<string, List<string>> Save()
+        public override Dictionary<int, Dictionary<string, List<string>>> Save(int uniceID)
         {
             List<string> stringedData = new List<string>() { Convert.ToString(Id), Convert.ToString(Weight), Convert.ToString(Price), Destination, Name, Publisher, Type};
-            Dictionary<string, List<string>> saveble = new Dictionary<string, List<string>>();
-            saveble.Add("Electronics", stringedData);
+            Dictionary<int, Dictionary<string, List<string>>> saveble = new Dictionary<int, Dictionary<string, List<string>>>();
+            saveble[uniceID].Add("Electronics", stringedData);
             return saveble;
         }
     }
@@ -89,11 +89,11 @@ namespace Werhousmeneger
             Hight = hight;
             With = with;
         }
-        public override Dictionary<string, List<string>> Save()
+        public override Dictionary<int, Dictionary<string, List<string>>> Save(int uniceID)
         {
             List<string> stringedData = new List<string>() { Convert.ToString(Id), Convert.ToString(Weight), Convert.ToString(Price), Destination, Type, Convert.ToString(Hight), Convert.ToString(With)};
-            Dictionary<string, List<string>> saveble = new Dictionary<string, List<string>>();
-            saveble.Add("Furniture", stringedData);
+            Dictionary<int, Dictionary<string, List<string>>> saveble = new Dictionary<int, Dictionary<string, List<string>>>();
+            saveble[uniceID].Add("Furniture", stringedData);
             return saveble;
         }
     }
@@ -104,54 +104,98 @@ namespace Werhousmeneger
         {
             string json = File.ReadAllText(filname);
 
-            Dictionary<string, List<string>> data = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(json);
+            Dictionary<int, Dictionary<string, List<string>>> data = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<string, List<string>>>>(json);
 
             List<Items> inventory = new List<Items>();
             int index = 0;
 
-            foreach (string k in data.Keys)
+            foreach (int id in data.Keys)
             {
-                switch (k)
+                foreach (string k in data[id].Keys)
                 {
-                    case "Items":
-                        {
-                            inventory.Add(new Items(
-                                Convert.ToInt32(data[k][0]),Convert.ToDouble(data[k][1]),Convert.ToInt32(data[k][2]), data[k][3]
-                                ));
-                            break;
-                        }
-                    case "Books":
-                        {
-                            inventory.Add(new Books(
-                                data[k][4], data[k][5], Convert.ToInt32(data[k][6]), Convert.ToInt32(data[k][7]),Convert.ToInt32(data[k][0]), Convert.ToDouble(data[k][1]), Convert.ToInt32(data[k][2]), data[k][3]
-                                ));
-                            break;
-                        }
-                    case "Electronics":
-                        {
-                            inventory.Add(new Electronics(
-                                data[k][4], data[k][5], data[k][6], Convert.ToInt32(data[k][0]), Convert.ToDouble(data[k][1]), Convert.ToInt32(data[k][2]), data[k][3]
-                                ));
-                            break;
-                        }
-                    case "Furniture":
-                        {
-                            inventory.Add(new Furniture(
-                                data[k][4], Convert.ToInt32(data[k][5]), Convert.ToInt32(data[k][6]), Convert.ToInt32(data[k][0]), Convert.ToDouble(data[k][1]), Convert.ToInt32(data[k][2]), data[k][3]
-                                ));
-                            break;
-                        }
+                    switch (k)
+                    {
+                        case "Items":
+                            {
+                                inventory.Add(new Items(
+                                    Convert.ToInt32(data[id][k][0]), Convert.ToDouble(data[id][k][1]), Convert.ToInt32(data[id][k][2]), data[id][k][3]
+                                    ));
+                                break;
+                            }
+                        case "Books":
+                            {
+                                inventory.Add(new Books(
+                                    data[id][k][4], data[id][k][5], Convert.ToInt32(data[id][k][6]), Convert.ToInt32(data[id][k][7]), Convert.ToInt32(data[id][k][0]), Convert.ToDouble(data[id][k][1]), Convert.ToInt32(data[id][k][2]), data[id][k][3]
+                                    ));
+                                break;
+                            }
+                        case "Electronics":
+                            {
+                                inventory.Add(new Electronics(
+                                    data[id][k][4], data[id][k][5], data[id][k][6], Convert.ToInt32(data[id][k][0]), Convert.ToDouble(data[id][k][1]), Convert.ToInt32(data[id][k][2]), data[id][k][3]
+                                    ));
+                                break;
+                            }
+                        case "Furniture":
+                            {
+                                inventory.Add(new Furniture(
+                                    data[id][k][4], Convert.ToInt32(data[id][k][5]), Convert.ToInt32(data[id][k][6]), Convert.ToInt32(data[id][k][0]), Convert.ToDouble(data[id][k][1]), Convert.ToInt32(data[id][k][2]), data[id][k][3]
+                                    ));
+                                break;
+                            }
 
+                    }
                 }
-                index++;
             }
             return inventory;
+        }
+        static int Menu()
+        {
+            Console.Clear();
+            Console.WriteLine("========================");
+            Console.WriteLine("1.) All items");
+            Console.WriteLine("2.) Searches");
+            Console.WriteLine("3.) Add item");
+            Console.WriteLine("4.) Remuve item");
+            Console.WriteLine("========================");
+            Console.Write("Answer: ");
+            int answer = Convert.ToInt32(Console.ReadLine());
+            return answer;
         }
         static void Main(string[] args)
         {
             List<Items> inventroy= Load("data.json");
-            Console.WriteLine(inventroy);
-            Console.ReadLine();
+            bool run = true;
+            while (run)
+            {
+                try
+                {
+                   int answer = Menu();
+                   switch (answer)
+                    {
+                        case 1:
+                            {
+                                break;
+                            }
+                        case 2:
+                            {
+                                break;
+                            }
+                        case 3:
+                            {
+                                break;
+                            }
+                        case 4:
+                            {
+                                break;
+                            }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Pleas try using int imput");
+                }
+            }
         }
     }
 }
