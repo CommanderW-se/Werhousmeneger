@@ -199,7 +199,7 @@ namespace Werhousmeneger
             Console.WriteLine("1.) All items");
             Console.WriteLine("2.) Searches");
             Console.WriteLine("3.) Add item");
-            Console.WriteLine("4.) Remuve item");
+            Console.WriteLine("4.) Remuve item by id");
             Console.WriteLine("5.) Exit");
             Console.WriteLine("========================");
             Console.Write("Answer: ");
@@ -321,6 +321,34 @@ namespace Werhousmeneger
                             }
                         case 4:
                             {
+                                Console.Clear();
+                                Console.Write("Give the id you want to remuve: ");
+                                int id = Convert.ToInt32(Console.ReadLine());
+                                foreach (var item in inventory)
+                                {
+                                    if (item.Id == id)
+                                    {
+                                        item.Print();
+                                        Console.WriteLine("");
+                                        Console.Write("Do you wnat to remove this item?(y/n): ");
+                                        string choise = Console.ReadLine();
+                                        if (choise.ToLower() == "y")
+                                        {
+                                            inventory.Remove(item);
+                                            Console.WriteLine($"Remuved item with {id}");
+                                            Console.ReadLine();
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Nothing");
+                                            Console.ReadLine();
+                                            break;
+                                        }
+                                    }
+                                    Console.WriteLine($"No item with {id}");
+                                    Console.ReadLine();
+                                }
                                 break;
                             }
                         case 5:
