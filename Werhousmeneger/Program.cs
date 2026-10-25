@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.Serialization.Formatters;
 using System.Security.Policy;
 using System.Text;
@@ -35,6 +36,14 @@ namespace Werhousmeneger
             saveble[uniceID].Add("Items", stringedData);
             return saveble;
         }
+        public virtual void Print()
+        {
+            Console.WriteLine("Type: Item");
+            Console.WriteLine($"     Id: {Id}");
+            Console.WriteLine($"     Weight: {Weight}");
+            Console.WriteLine($"     Price: {Price}");
+            Console.WriteLine($"     Destination: {Destination}");
+        }
 
     }
     public class Books : Items
@@ -58,6 +67,18 @@ namespace Werhousmeneger
             saveble[uniceID].Add("Books", stringedData);
             return saveble;
         }
+        public override void Print()
+        {
+            Console.WriteLine("Type: Book");
+            Console.WriteLine($"     Id: {Id}");
+            Console.WriteLine($"     Weight: {Weight}");
+            Console.WriteLine($"     Price: {Price}");
+            Console.WriteLine($"     Destination: {Destination}");
+            Console.WriteLine($"     Writer: {Writer}");
+            Console.WriteLine($"     Title: {Title}");
+            Console.WriteLine($"     Pagecount: {PageCount}");
+            Console.WriteLine($"     Release date: {ReleaseDate}");
+        }
     }
     public class Electronics : Items
     {
@@ -77,6 +98,17 @@ namespace Werhousmeneger
             saveble[uniceID].Add("Electronics", stringedData);
             return saveble;
         }
+        public override void Print()
+        {
+            Console.WriteLine("Type: Electronic");
+            Console.WriteLine($"     Id: {Id}");
+            Console.WriteLine($"     Weight: {Weight}");
+            Console.WriteLine($"     Price: {Price}");
+            Console.WriteLine($"     Destination: {Destination}");
+            Console.WriteLine($"     Name: {Name}");
+            Console.WriteLine($"     Publisher: {Publisher}");
+            Console.WriteLine($"     Type: {Type}");
+        }
     }
     public class Furniture : Items
     {
@@ -95,6 +127,17 @@ namespace Werhousmeneger
             Dictionary<int, Dictionary<string, List<string>>> saveble = new Dictionary<int, Dictionary<string, List<string>>>();
             saveble[uniceID].Add("Furniture", stringedData);
             return saveble;
+        }
+        public override void Print()
+        {
+            Console.WriteLine("Type: Furniture");
+            Console.WriteLine($"     Id: {Id}");
+            Console.WriteLine($"     Weight: {Weight}");
+            Console.WriteLine($"     Price: {Price}");
+            Console.WriteLine($"     Destination: {Destination}");
+            Console.WriteLine($"     Type: {Type}");
+            Console.WriteLine($"     Hiht: {Hight}");
+            Console.WriteLine($"     With: {With}");
         }
     }
 
@@ -157,6 +200,7 @@ namespace Werhousmeneger
             Console.WriteLine("2.) Searches");
             Console.WriteLine("3.) Add item");
             Console.WriteLine("4.) Remuve item");
+            Console.WriteLine("5.) Exit");
             Console.WriteLine("========================");
             Console.Write("Answer: ");
             int answer = Convert.ToInt32(Console.ReadLine());
@@ -164,7 +208,7 @@ namespace Werhousmeneger
         }
         static void Main(string[] args)
         {
-            List<Items> inventroy= Load("data.json");
+            List<Items> inventory= Load("data.json");
             bool run = true;
             while (run)
             {
@@ -175,6 +219,11 @@ namespace Werhousmeneger
                     {
                         case 1:
                             {
+                                foreach (var item in inventory)
+                                {
+                                    item.Print();
+                                }
+                                Console.ReadLine();
                                 break;
                             }
                         case 2:
@@ -183,10 +232,102 @@ namespace Werhousmeneger
                             }
                         case 3:
                             {
+                                Console.Clear();
+                                Console.WriteLine("========================");
+                                Console.WriteLine("1.) Items");
+                                Console.WriteLine("2.) Books");
+                                Console.WriteLine("3.) Electronics");
+                                Console.WriteLine("4.) Furniture");
+                                Console.Write("Please give the typeof the item: ");
+                                int type = Convert.ToInt16(Console.ReadLine());
+                                switch (type)
+                                {
+                                    case 1:
+                                        {
+                                            Console.Write("Give the new item an id(int): ");
+                                            int id = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item a weight(double): ");
+                                            double weight = Convert.ToDouble(Console.ReadLine());
+                                            Console.Write("Give the new item a price(int): ");
+                                            int price = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item an destination(string): ");
+                                            string destination = Console.ReadLine();
+                                            inventory.Add(new Items(id, weight,price, destination));
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            Console.Write("Give the new item an id(int): ");
+                                            int id = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item a weight(double): ");
+                                            double weight = Convert.ToDouble(Console.ReadLine());
+                                            Console.Write("Give the new item a price(int): ");
+                                            int price = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item a destination(string): ");
+                                            string destination = Console.ReadLine();
+                                            Console.Write("Give the new item a writer(string): ");
+                                            string writer = Console.ReadLine();
+                                            Console.Write("Give the new item a title(string): ");
+                                            string title = Console.ReadLine();
+                                            Console.Write("Give the new item a pageCount(int): ");
+                                            int pageCount = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item a releaseDate(int): ");
+                                            int releaseDate = Convert.ToInt32(Console.ReadLine());
+                                            inventory.Add(new Books(writer,title,pageCount,releaseDate,id, weight, price, destination));
+                                            break;
+                                        }
+                                    case 3:
+                                        {
+                                            Console.Write("Give the new item an id(int): ");
+                                            int id = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item a weight(double): ");
+                                            double weight = Convert.ToDouble(Console.ReadLine());
+                                            Console.Write("Give the new item a price(int): ");
+                                            int price = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item a destination(string): ");
+                                            string destination = Console.ReadLine();
+                                            Console.Write("Give the new item a name(string): ");
+                                            string name = Console.ReadLine();
+                                            Console.Write("Give the new item a publisher(string): ");
+                                            string publisher = Console.ReadLine();
+                                            Console.Write("Give the new item a type(string): ");
+                                            string etype = Console.ReadLine();
+                                            inventory.Add(new Electronics(name,publisher,etype,id, weight, price, destination));
+                                            break;
+                                        }
+                                    case 4:
+                                        {
+                                            Console.Write("Give the new item an id(int): ");
+                                            int id = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item a weight(double): ");
+                                            double weight = Convert.ToDouble(Console.ReadLine());
+                                            Console.Write("Give the new item a price(int): ");
+                                            int price = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item a destination(string): ");
+                                            string destination = Console.ReadLine();
+                                            Console.Write("Give the new item a type(string): ");
+                                            string ftype = Console.ReadLine();
+                                            Console.Write("Give the new item a hight(int): ");
+                                            int hight = Convert.ToInt32(Console.ReadLine());
+                                            Console.Write("Give the new item a with(int): ");
+                                            int with = Convert.ToInt32(Console.ReadLine());
+                                            inventory.Add(new Furniture(ftype,hight ,with , id, weight, price, destination));
+                                            break;
+                                        }
+                                }
+                                Console.WriteLine("Successfuly added new item.");
+                                Console.ReadLine();
                                 break;
                             }
                         case 4:
                             {
+                                break;
+                            }
+                        case 5:
+                            {
+                                Console.WriteLine("Exiting.....");
+                                Console.ReadLine();
+                                run = false;
                                 break;
                             }
                     }
