@@ -40,5 +40,803 @@
       "75",
       "120"
     ]
+  },
+  "5": {
+    "Items": [
+      "5",
+      "3.8",
+      "9800",
+      "Budapest"
+    ]
+  },
+  "6": {
+    "Books": [
+      "6",
+      "0.42",
+      "3990",
+      "Pecs",
+      "George Orwell",
+      "1984",
+      "328",
+      "1949"
+    ]
+  },
+  "7": {
+    "Electronics": [
+      "7",
+      "0.18",
+      "12990",
+      "Sopron",
+      "Wireless Mouse",
+      "Logitech",
+      "Peripherals"
+    ]
+  },
+  "8": {
+    "Furniture": [
+      "8",
+      "6.5",
+      "17990",
+      "Szekesfehervar",
+      "Chair",
+      "92",
+      "48"
+    ]
+  },
+  "9": {
+    "Items": [
+      "9",
+      "0.4",
+      "2300",
+      "Miskolc"
+    ]
+  },
+  "10": {
+    "Books": [
+      "10",
+      "0.6",
+      "5290",
+      "Eger",
+      "Frank Herbert",
+      "Dune",
+      "412",
+      "1965"
+    ]
+  },
+  "11": {
+    "Electronics": [
+      "11",
+      "0.85",
+      "34990",
+      "Nyiregyhaza",
+      "Mechanical Keyboard",
+      "Keychron",
+      "Peripherals"
+    ]
+  },
+  "12": {
+    "Furniture": [
+      "12",
+      "26",
+      "44990",
+      "Zalaegerszeg",
+      "Bookshelf",
+      "180",
+      "80"
+    ]
+  },
+  "13": {
+    "Items": [
+      "13",
+      "12.5",
+      "18500",
+      "Veszprem"
+    ]
+  },
+  "14": {
+    "Books": [
+      "14",
+      "0.32",
+      "2990",
+      "Szolnok",
+      "Antoine de Saint-Exupery",
+      "The Little Prince",
+      "96",
+      "1943"
+    ]
+  },
+  "15": {
+    "Electronics": [
+      "15",
+      "0.35",
+      "25990",
+      "Bekescsaba",
+      "Bluetooth Headphones",
+      "Sony",
+      "Audio"
+    ]
+  },
+  "16": {
+    "Furniture": [
+      "16",
+      "24",
+      "69990",
+      "Budapest",
+      "Office Desk",
+      "74",
+      "140"
+    ]
+  },
+  "17": {
+    "Items": [
+      "17",
+      "1.75",
+      "5400",
+      "Kaposvar"
+    ]
+  },
+  "18": {
+    "Books": [
+      "18",
+      "0.8",
+      "6190",
+      "Vac",
+      "J.K. Rowling",
+      "Harry Potter and the Philosopher's Stone",
+      "223",
+      "1997"
+    ]
+  },
+  "19": {
+    "Electronics": [
+      "19",
+      "4.2",
+      "89990",
+      "Szeged",
+      "24-inch Monitor",
+      "Samsung",
+      "Display"
+    ]
+  },
+  "20": {
+    "Furniture": [
+      "20",
+      "63",
+      "129990",
+      "Miskolc",
+      "Wardrobe",
+      "200",
+      "120"
+    ]
+  },
+  "21": {
+    "Items": [
+      "21",
+      "6.2",
+      "12500",
+      "Debrecen"
+    ]
+  },
+  "22": {
+    "Books": [
+      "22",
+      "0.5",
+      "4490",
+      "Gyor",
+      "Agatha Christie",
+      "Murder on the Orient Express",
+      "256",
+      "1934"
+    ]
+  },
+  "23": {
+    "Electronics": [
+      "23",
+      "0.24",
+      "17990",
+      "Kecskemet",
+      "USB-C Hub",
+      "Anker",
+      "Adapter"
+    ]
+  },
+  "24": {
+    "Furniture": [
+      "24",
+      "14.2",
+      "24990",
+      "Veszprem",
+      "Coffee Table",
+      "45",
+      "90"
+    ]
+  },
+  "25": {
+    "Items": [
+      "25",
+      "0.9",
+      "1600",
+      "Sopron"
+    ]
+  },
+  "26": {
+    "Books": [
+      "26",
+      "0.7",
+      "5690",
+      "Szekesfehervar",
+      "Isaac Asimov",
+      "Foundation",
+      "255",
+      "1951"
+    ]
+  },
+  "27": {
+    "Electronics": [
+      "27",
+      "1.4",
+      "65990",
+      "Tatabanya",
+      "Wi-Fi Router",
+      "TP-Link",
+      "Networking"
+    ]
+  },
+  "28": {
+    "Furniture": [
+      "28",
+      "78",
+      "219990",
+      "Kaposvar",
+      "Sofa",
+      "85",
+      "210"
+    ]
+  },
+  "29": {
+    "Items": [
+      "29",
+      "4.1",
+      "7600",
+      "Nyiregyhaza"
+    ]
+  },
+  "30": {
+    "Books": [
+      "30",
+      "0.38",
+      "3490",
+      "Zalaegerszeg",
+      "Arthur Conan Doyle",
+      "A Study in Scarlet",
+      "188",
+      "1887"
+    ]
+  },
+  "31": {
+    "Electronics": [
+      "31",
+      "0.09",
+      "8990",
+      "Szombathely",
+      "64GB Flash Drive",
+      "SanDisk",
+      "Storage"
+    ]
+  },
+  "32": {
+    "Furniture": [
+      "32",
+      "54",
+      "159990",
+      "Debrecen",
+      "Bed Frame",
+      "100",
+      "160"
+    ]
+  },
+  "33": {
+    "Items": [
+      "33",
+      "22",
+      "29500",
+      "Bekescsaba"
+    ]
+  },
+  "34": {
+    "Books": [
+      "34",
+      "0.74",
+      "5990",
+      "Budapest",
+      "Patrick Rothfuss",
+      "The Name of the Wind",
+      "662",
+      "2007"
+    ]
+  },
+  "35": {
+    "Electronics": [
+      "35",
+      "0.7",
+      "45990",
+      "Pecs",
+      "1TB External SSD",
+      "Samsung",
+      "Storage"
+    ]
+  },
+  "36": {
+    "Furniture": [
+      "36",
+      "9.8",
+      "16990",
+      "Sopron",
+      "Nightstand",
+      "55",
+      "45"
+    ]
+  },
+  "37": {
+    "Items": [
+      "37",
+      "0.65",
+      "1900",
+      "Szeged"
+    ]
+  },
+  "38": {
+    "Books": [
+      "38",
+      "0.43",
+      "4190",
+      "Miskolc",
+      "Aldous Huxley",
+      "Brave New World",
+      "268",
+      "1932"
+    ]
+  },
+  "39": {
+    "Electronics": [
+      "39",
+      "0.12",
+      "14990",
+      "Eger",
+      "Webcam HD",
+      "Logitech",
+      "Camera"
+    ]
+  },
+  "40": {
+    "Furniture": [
+      "40",
+      "39",
+      "89990",
+      "Nyiregyhaza",
+      "Dining Table",
+      "76",
+      "160"
+    ]
+  },
+  "41": {
+    "Items": [
+      "41",
+      "8.4",
+      "14500",
+      "Kecskemet"
+    ]
+  },
+  "42": {
+    "Books": [
+      "42",
+      "0.55",
+      "4790",
+      "Veszprem",
+      "Ray Bradbury",
+      "Fahrenheit 451",
+      "194",
+      "1953"
+    ]
+  },
+  "43": {
+    "Electronics": [
+      "43",
+      "2.8",
+      "139990",
+      "Szolnok",
+      "Laser Printer",
+      "Brother",
+      "Printer"
+    ]
+  },
+  "44": {
+    "Furniture": [
+      "44",
+      "5.4",
+      "13990",
+      "Bekescsaba",
+      "Stool",
+      "65",
+      "40"
+    ]
+  },
+  "45": {
+    "Items": [
+      "45",
+      "2.25",
+      "6100",
+      "Tatabanya"
+    ]
+  },
+  "46": {
+    "Books": [
+      "46",
+      "0.67",
+      "5490",
+      "Kaposvar",
+      "Mary Shelley",
+      "Frankenstein",
+      "280",
+      "1818"
+    ]
+  },
+  "47": {
+    "Electronics": [
+      "47",
+      "0.95",
+      "49990",
+      "Vac",
+      "Portable Speaker",
+      "JBL",
+      "Audio"
+    ]
+  },
+  "48": {
+    "Furniture": [
+      "48",
+      "31",
+      "59990",
+      "Szeged",
+      "TV Stand",
+      "52",
+      "150"
+    ]
+  },
+  "49": {
+    "Items": [
+      "49",
+      "15.8",
+      "25900",
+      "Szombathely"
+    ]
+  },
+  "50": {
+    "Books": [
+      "50",
+      "0.82",
+      "6490",
+      "Debrecen",
+      "Brandon Sanderson",
+      "Mistborn: The Final Empire",
+      "541",
+      "2006"
+    ]
+  },
+  "51": {
+    "Electronics": [
+      "51",
+      "0.45",
+      "19990",
+      "Gyor",
+      "Power Bank",
+      "Anker",
+      "Power"
+    ]
+  },
+  "52": {
+    "Furniture": [
+      "52",
+      "35",
+      "67990",
+      "Kecskemet",
+      "Drawer Cabinet",
+      "110",
+      "70"
+    ]
+  },
+  "53": {
+    "Items": [
+      "53",
+      "0.3",
+      "950",
+      "Pecs"
+    ]
+  },
+  "54": {
+    "Books": [
+      "54",
+      "0.47",
+      "4390",
+      "Sopron",
+      "Ernest Hemingway",
+      "The Old Man and the Sea",
+      "127",
+      "1952"
+    ]
+  },
+  "55": {
+    "Electronics": [
+      "55",
+      "0.75",
+      "62990",
+      "Szekesfehervar",
+      "Smartwatch",
+      "Garmin",
+      "Wearable"
+    ]
+  },
+  "56": {
+    "Furniture": [
+      "56",
+      "12",
+      "21990",
+      "Tatabanya",
+      "Shoe Rack",
+      "75",
+      "85"
+    ]
+  },
+  "57": {
+    "Items": [
+      "57",
+      "7.6",
+      "17300",
+      "Eger"
+    ]
+  },
+  "58": {
+    "Books": [
+      "58",
+      "0.59",
+      "4990",
+      "Nyiregyhaza",
+      "Douglas Adams",
+      "The Hitchhiker's Guide to the Galaxy",
+      "224",
+      "1979"
+    ]
+  },
+  "59": {
+    "Electronics": [
+      "59",
+      "3.9",
+      "169990",
+      "Zalaegerszeg",
+      "Mini PC",
+      "Intel",
+      "Computer"
+    ]
+  },
+  "60": {
+    "Furniture": [
+      "60",
+      "17",
+      "32990",
+      "Szombathely",
+      "Bench",
+      "48",
+      "120"
+    ]
+  },
+  "61": {
+    "Items": [
+      "61",
+      "5.5",
+      "11200",
+      "Szolnok"
+    ]
+  },
+  "62": {
+    "Books": [
+      "62",
+      "0.72",
+      "5590",
+      "Bekescsaba",
+      "J.R.R. Tolkien",
+      "The Fellowship of the Ring",
+      "423",
+      "1954"
+    ]
+  },
+  "63": {
+    "Electronics": [
+      "63",
+      "0.5",
+      "32990",
+      "Budapest",
+      "Game Controller",
+      "Microsoft",
+      "Gaming"
+    ]
+  },
+  "64": {
+    "Furniture": [
+      "64",
+      "27",
+      "44990",
+      "Pecs",
+      "Filing Cabinet",
+      "130",
+      "45"
+    ]
+  },
+  "65": {
+    "Items": [
+      "65",
+      "1.15",
+      "2750",
+      "Vac"
+    ]
+  },
+  "66": {
+    "Books": [
+      "66",
+      "0.46",
+      "3990",
+      "Szeged",
+      "Harper Lee",
+      "To Kill a Mockingbird",
+      "281",
+      "1960"
+    ]
+  },
+  "67": {
+    "Electronics": [
+      "67",
+      "0.36",
+      "27990",
+      "Miskolc",
+      "Graphics Tablet",
+      "Wacom",
+      "Input"
+    ]
+  },
+  "68": {
+    "Furniture": [
+      "68",
+      "34",
+      "119990",
+      "Eger",
+      "Standing Desk",
+      "120",
+      "140"
+    ]
+  },
+  "69": {
+    "Items": [
+      "69",
+      "30",
+      "39000",
+      "Gyor"
+    ]
+  },
+  "70": {
+    "Books": [
+      "70",
+      "0.64",
+      "5190",
+      "Kecskemet",
+      "Andy Weir",
+      "The Martian",
+      "369",
+      "2011"
+    ]
+  },
+  "71": {
+    "Electronics": [
+      "71",
+      "1.9",
+      "78990",
+      "Veszprem",
+      "Network Switch 16-Port",
+      "TP-Link",
+      "Networking"
+    ]
+  },
+  "72": {
+    "Furniture": [
+      "72",
+      "7.2",
+      "18990",
+      "Szolnok",
+      "Coat Rack",
+      "170",
+      "45"
+    ]
+  },
+  "73": {
+    "Items": [
+      "73",
+      "9.35",
+      "19900",
+      "Szekesfehervar"
+    ]
+  },
+  "74": {
+    "Books": [
+      "74",
+      "0.58",
+      "4890",
+      "Tatabanya",
+      "Suzanne Collins",
+      "The Hunger Games",
+      "374",
+      "2008"
+    ]
+  },
+  "75": {
+    "Electronics": [
+      "75",
+      "0.28",
+      "22990",
+      "Kaposvar",
+      "Microphone",
+      "HyperX",
+      "Audio"
+    ]
+  },
+  "76": {
+    "Furniture": [
+      "76",
+      "49",
+      "99990",
+      "Vac",
+      "Sideboard",
+      "85",
+      "160"
+    ]
+  },
+  "77": {
+    "Items": [
+      "77",
+      "0.85",
+      "3500",
+      "Zalaegerszeg"
+    ]
+  },
+  "78": {
+    "Books": [
+      "78",
+      "0.9",
+      "6890",
+      "Szombathely",
+      "George R.R. Martin",
+      "A Game of Thrones",
+      "694",
+      "1996"
+    ]
+  },
+  "79": {
+    "Electronics": [
+      "79",
+      "1.15",
+      "54990",
+      "Debrecen",
+      "Security Camera",
+      "Reolink",
+      "Camera"
+    ]
+  },
+  "80": {
+    "Furniture": [
+      "80",
+      "36",
+      "74990",
+      "Gyor",
+      "Armchair",
+      "98",
+      "88"
+    ]
   }
 }
