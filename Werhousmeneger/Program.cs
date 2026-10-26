@@ -29,11 +29,11 @@ namespace Werhousmeneger
             Destination = destination;
         }
 
-        public virtual Dictionary<int, Dictionary<string, List<string>>> Save(int uniceID)
+        public virtual Dictionary<string, List<string>> Save()
         {
             List<string> stringedData = new List<string>() { Convert.ToString(Id), Convert.ToString(Weight), Convert.ToString(Price), Destination };
-            Dictionary<int,Dictionary<string, List<string>>>  saveble = new Dictionary<int, Dictionary<string, List<string>>>();
-            saveble[uniceID].Add("Items", stringedData);
+            Dictionary<string, List<string>> saveble = new Dictionary<string, List<string>>();
+            saveble.Add("Items", stringedData);
             return saveble;
         }
         public virtual void Print()
@@ -60,11 +60,11 @@ namespace Werhousmeneger
             PageCount = pageCount;
             ReleaseDate = releaseDate;
         }
-        public override Dictionary<int, Dictionary<string, List<string>>> Save(int uniceID)
+        public override Dictionary<string, List<string>> Save()
         {
             List<string> stringedData = new List<string>() { Convert.ToString(Id), Convert.ToString(Weight), Convert.ToString(Price), Destination, Writer, Title,Convert.ToString(PageCount), Convert.ToString(ReleaseDate)};
-            Dictionary<int, Dictionary<string, List<string>>> saveble = new Dictionary<int, Dictionary<string, List<string>>>();
-            saveble[uniceID].Add("Books", stringedData);
+            Dictionary<string, List<string>> saveble = new Dictionary<string, List<string>>();
+            saveble.Add("Books", stringedData);
             return saveble;
         }
         public override void Print()
@@ -91,11 +91,11 @@ namespace Werhousmeneger
             Publisher = publisher;
             Type = type;
         }
-        public override Dictionary<int, Dictionary<string, List<string>>> Save(int uniceID)
+        public override Dictionary<string, List<string>> Save()
         {
             List<string> stringedData = new List<string>() { Convert.ToString(Id), Convert.ToString(Weight), Convert.ToString(Price), Destination, Name, Publisher, Type};
-            Dictionary<int, Dictionary<string, List<string>>> saveble = new Dictionary<int, Dictionary<string, List<string>>>();
-            saveble[uniceID].Add("Electronics", stringedData);
+            Dictionary<string, List<string>> saveble = new Dictionary<string, List<string>>();
+            saveble.Add("Electronics", stringedData);
             return saveble;
         }
         public override void Print()
@@ -121,11 +121,11 @@ namespace Werhousmeneger
             Hight = hight;
             With = with;
         }
-        public override Dictionary<int, Dictionary<string, List<string>>> Save(int uniceID)
+        public override Dictionary<string, List<string>> Save()
         {
             List<string> stringedData = new List<string>() { Convert.ToString(Id), Convert.ToString(Weight), Convert.ToString(Price), Destination, Type, Convert.ToString(Hight), Convert.ToString(With)};
-            Dictionary<int, Dictionary<string, List<string>>> saveble = new Dictionary<int, Dictionary<string, List<string>>>();
-            saveble[uniceID].Add("Furniture", stringedData);
+            Dictionary<string, List<string>> saveble = new Dictionary<string, List<string>>();
+            saveble.Add("Furniture", stringedData);
             return saveble;
         }
         public override void Print()
@@ -145,7 +145,17 @@ namespace Werhousmeneger
     {
         static void Save(List<Items> inventory)
         {
-
+            int unId = 1;
+            Dictionary<int, Dictionary<string, List<string>>> toSave = new Dictionary<int, Dictionary<string, List<string>>>();
+            foreach (var i in inventory)
+            {
+                toSave.Add(unId,i.Save());
+                unId++;
+            }
+            string json = JsonConvert.SerializeObject(toSave, Formatting.Indented);
+            File.WriteAllText("data.json", json);
+            Console.WriteLine("Successfully saved all items.");
+            Console.ReadLine();
         }
         static List<Items> Load(string filname)
         {
@@ -204,7 +214,8 @@ namespace Werhousmeneger
             Console.WriteLine("2.) Searches");
             Console.WriteLine("3.) Add item");
             Console.WriteLine("4.) Remuve item by id");
-            Console.WriteLine("5.) Exit");
+            Console.WriteLine("5.) Save all");
+            Console.WriteLine("6.) Exit");
             Console.WriteLine("========================");
             Console.Write("Answer: ");
             int answer = Convert.ToInt32(Console.ReadLine());
@@ -422,6 +433,11 @@ namespace Werhousmeneger
                                 break;
                             }
                         case 5:
+                            {
+                                Save(inventory);
+                                break;
+                            }
+                        case 6:
                             {
                                 Console.WriteLine("Exiting.....");
                                 Console.ReadLine();
