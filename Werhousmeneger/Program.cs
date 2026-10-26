@@ -143,6 +143,10 @@ namespace Werhousmeneger
 
     internal class Program
     {
+        static void Save(List<Items> inventory)
+        {
+
+        }
         static List<Items> Load(string filname)
         {
             string json = File.ReadAllText(filname);
@@ -219,6 +223,7 @@ namespace Werhousmeneger
                     {
                         case 1:
                             {
+                                Console.Clear();
                                 foreach (var item in inventory)
                                 {
                                     item.Print();
@@ -228,6 +233,70 @@ namespace Werhousmeneger
                             }
                         case 2:
                             {
+                                Console.Clear();
+                                Console.WriteLine("========================");
+                                Console.WriteLine("1) by id");
+                                Console.WriteLine("2) by weight");
+                                Console.WriteLine("3) by price");
+                                Console.WriteLine("4) by destination");
+                                Console.Write(">: ");
+                                int v = Convert.ToInt32(Console.ReadLine());
+                                switch(v)
+                                {
+                                    case 1:
+                                        {
+                                            Console.Write("Give the id: ");
+                                            int id = Convert.ToInt32(Console.ReadLine());
+                                            foreach (var item in inventory)
+                                            {
+                                                if (item.Id == id)
+                                                {
+                                                    item.Print();
+                                                }
+                                            }
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            Console.Write("Give the weight: ");
+                                            int weight = Convert.ToInt32(Console.ReadLine());
+                                            foreach (var item in inventory)
+                                            {
+                                                if (item.Weight == weight)
+                                                {
+                                                    item.Print();
+                                                }
+                                            }
+                                            break;
+                                        }
+                                    case 3:
+                                        {
+                                            Console.Write("Give the price: ");
+                                            int price = Convert.ToInt32(Console.ReadLine());
+                                            foreach (var item in inventory)
+                                            {
+                                                if (item.Price == price)
+                                                {
+                                                    item.Print();
+                                                }
+                                            }
+                                            break;
+                                        }
+                                    case 4:
+                                        {
+                                            Console.Write("Give the destination: ");
+                                            string destination = Console.ReadLine().ToLower();
+                                            foreach (var item in inventory)
+                                            {
+                                                if (item.Destination.ToLower() == destination)
+                                                {
+                                                    item.Print();
+                                                }
+                                            }
+                                            break;
+                                        }
+                                }
+                                Console.ReadLine();
                                 break;
                             }
                         case 3:
@@ -238,6 +307,7 @@ namespace Werhousmeneger
                                 Console.WriteLine("2.) Books");
                                 Console.WriteLine("3.) Electronics");
                                 Console.WriteLine("4.) Furniture");
+                                Console.WriteLine();
                                 Console.Write("Please give the typeof the item: ");
                                 int type = Convert.ToInt16(Console.ReadLine());
                                 switch (type)
@@ -329,7 +399,7 @@ namespace Werhousmeneger
                                     if (item.Id == id)
                                     {
                                         item.Print();
-                                        Console.WriteLine("");
+                                        Console.WriteLine();
                                         Console.Write("Do you wnat to remove this item?(y/n): ");
                                         string choise = Console.ReadLine();
                                         if (choise.ToLower() == "y")
@@ -346,9 +416,9 @@ namespace Werhousmeneger
                                             break;
                                         }
                                     }
-                                    Console.WriteLine($"No item with {id}");
-                                    Console.ReadLine();
                                 }
+                                Console.WriteLine($"No item with {id}");
+                                Console.ReadLine();
                                 break;
                             }
                         case 5:
